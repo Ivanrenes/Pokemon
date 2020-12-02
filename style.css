@@ -1,0 +1,33 @@
+body{
+	background-color: #333;
+	overflow: hidden;
+}
+
+.contenedor{
+	text-align: center;
+	margin: 0 auto;
+	height: 300px;
+	width: 350px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor input {
+	text-align: center;
+	margin-bottom: 40px;
+}
+.contenedor button{
+	margin-top: 40px;
+	margin-top: -30px;
+}
+.pokemon{
+	width: 150px;
+	height: 150px;
+	margin: 40px auto;
+	display: inline-block;
+}
+p{
+	margin-top: -60px;
+}
