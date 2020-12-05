@@ -1,19 +1,7 @@
-const button = document.querySelector("#button");
-const search = document.querySelector("#search");
-const arrayFecht = [];
-
-search.addEventListener(
-  "keyup",
-  delay(function () {
-    let search = document.getElementById("search").value;
-    console.log(search);
-  }, 600)
-);
-
 window.addEventListener("loaded", writing());
 
 function writing() {
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=5";
+  const url = "https://pokeapi.co/api/v2/pokemon?limit=20";
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -25,18 +13,19 @@ function writing() {
           .then((response) => response.json())
           .then((imgdata) => {
             const ImgPokemon = imgdata.sprites.front_shiny;
-            var container = document.querySelector("#divImg");
+            var container = document.querySelector("#div");
 
             var template = `
-	      <div class="container">
-  <div class="card img-fluid" style="width:500px">
-    <img class="card-img-top" src="${ImgPokemon}" alt="Card image" style="width:100%">
-    <div class="card-img-overlay">
-      <h4 class="card-title">${pokemonName}</h4>
-     
-    </div>
-  </div>
-</div>	    `;
+	      <div class="divImg">
+		<div class="display-P">
+		    <img src="${ImgPokemon}">
+		</div>
+		<div class="N-pokemon">
+		    	<p class="P-pokemon">${pokemonName}</p>
+		</div>
+	      </div> 
+       
+       `;
             container.innerHTML += template;
           });
       });

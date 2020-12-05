@@ -1,33 +1,51 @@
-body{
-	background-color: #333;
-	overflow: hidden;
+body {
+  background-color: #85c1e9;
+}
+.container-el {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.contenedor{
-	text-align: center;
-	margin: 0 auto;
-	height: 300px;
-	width: 350px;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
+.divImg {
+  height: 200px;
+  width: 200px;
+  margin: 2em;
+  background-color: #d32f2f;
+  border-radius: 10px;
 }
 
-.contenedor input {
-	text-align: center;
-	margin-bottom: 40px;
+.display-P {
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 5px solid #d32f2f;
 }
-.contenedor button{
-	margin-top: 40px;
-	margin-top: -30px;
+
+.display-P img {
+  width: 100px;
+  height: 100px;
 }
-.pokemon{
-	width: 150px;
-	height: 150px;
-	margin: 40px auto;
-	display: inline-block;
+
+.pokemon {
+  width: 150px;
+  height: 150px;
+  margin: 40px auto;
+  display: inline-block;
 }
-p{
-	margin-top: -60px;
+.N-pokemon {
+  height: 50px;
+  width: 175px;
+  margin-left: 11px;
+  border: 5px solid #558a51;
+  margin-top: 1em;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #9e9d24;
+  font-family: "Press Start 2P", cursive;
+}
+
+.N-pokemon p {
+  margin-top: 7px;
 }
