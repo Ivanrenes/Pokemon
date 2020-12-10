@@ -1,37 +1,33 @@
 window.addEventListener("loaded", writing());
 
 function writing() {
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=20";
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      let pokemons = data.results;
-      let pokemonNames = pokemons.map((x) => x.name);
-      console.log(pokemonNames);
-      pokemonNames.forEach((pokemonName) => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-          .then((response) => response.json())
-          .then((imgdata) => {
-            const ImgPokemon = imgdata.sprites.front_shiny;
-            var container = document.querySelector("#div");
+  for (let i = 1; i <= 25; i += 1) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const pokemon = {
+          name: data.name,
+          image: `https://pokeres.bastionbot.org/images/pokemon/${i}.png`,
+          type: data.types.map((type) => type.type.name).join("- "),
+        };
+        console.log(pokemon.image);
+        var container = document.querySelector("#div");
 
-            var template = `
+        var template = `
 	      <div class="divImg">
 		<div class="display-P">
-		    <img src="${ImgPokemon}">
+		    <img src="${pokemon.image}">
 		</div>
 		<div class="N-pokemon">
-		    	<p class="P-pokemon">${pokemonName}</p>
+		    	<p class="P-pokemon">${pokemon.name}</p>
 		</div>
 	      </div> 
        
        `;
-            container.innerHTML += template;
-          });
+        container.innerHTML += template;
       });
-
-      console.log(data);
-    });
+  }
 }
 
 function delay(callback, ms) {
